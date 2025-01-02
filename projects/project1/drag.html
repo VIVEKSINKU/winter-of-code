@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag-Drop</title>
+    <link rel="stylesheet" href="drag.css">
+</head>
+
+<body>
+    <div class="cont">
+        <div id="left">
+            <div class="list" draggable="true">
+                <img src="https://w7.pngwing.com/pngs/24/876/png-transparent-symbol-information-logo-wikimedia-commons-dot-miscellaneous-english-city.png"
+                    alt="icon">
+                list item-1
+            </div>
+            <div class="list" draggable="true">
+                <img src="https://w7.pngwing.com/pngs/24/876/png-transparent-symbol-information-logo-wikimedia-commons-dot-miscellaneous-english-city.png"
+                    alt="icon">
+                list item-2
+            </div>
+            <div class="list" draggable="true">
+                <img src="https://w7.pngwing.com/pngs/24/876/png-transparent-symbol-information-logo-wikimedia-commons-dot-miscellaneous-english-city.png"
+                    alt="icon">
+                list item-3
+            </div>
+            <div class="list" draggable="true">
+                <img src="https://w7.pngwing.com/pngs/24/876/png-transparent-symbol-information-logo-wikimedia-commons-dot-miscellaneous-english-city.png"
+                    alt="icon">
+                list item-4
+            </div>
+        </div>
+        <div id="right">
+
+        </div>
+    </div>
+    <script>let lst = document.getElementsByClassName("list");
+        let rightbox = document.getElementById('right');
+        let leftbox = document.getElementById('left');
+
+        for (list of lst) {
+            list.addEventListener("dragstart", function (e) {
+                let selected = e.target;
+                rightbox.addEventListener("dragover", function (e) {
+                    e.preventDefault();
+                });
+                rightbox.addEventListener("drop", function (e) {
+                    rightbox.appendChild(selected);
+                    selected = null;
+                });
+                leftbox.addEventListener("dragover", function (e) {
+                    e.preventDefault();
+                });
+                leftbox.addEventListener("drop", function (e) {
+                    leftbox.appendChild(selected);
+                    selected = null;
+                });
+            });
+        };
+    </script>
+</body>
+
+</html>
