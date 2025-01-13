@@ -45,3 +45,12 @@ btn.addEventListener("click" ,()=>{
 });
 
 checkWeather();
+let moon = document.getElementById("moon");
+moon.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    if (document.body.classList.contains("dark")) {
+        moon.src = "https://static-00.iconduck.com/assets.00/white-sun-with-rays-emoji-512x512-d2ia3vdv.png";
+    } else {
+        moon.src = "https://static-00.iconduck.com/assets.00/crescent-moon-emoji-512x512-923xcoy4.png";
+    }
+});
